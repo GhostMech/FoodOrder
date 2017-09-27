@@ -11,14 +11,6 @@ class Order
     protected $items = [];
 
     /**
-     * Class constructor: not used
-     */
-    public function __construct()
-    {
-        //
-    }
-
-    /**
      * Add an item to the order.
      *
      * @param FoodInterface $item
