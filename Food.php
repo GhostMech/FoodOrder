@@ -40,7 +40,7 @@ class Food implements FoodInterface
      * Sets the price of the item. Returns the object for chaining.
      *
      * @param mixed $price
-     * @return void
+     * @return \GMH\Food
      */
     public function price($price)
     {
