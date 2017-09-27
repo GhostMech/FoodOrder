@@ -33,21 +33,7 @@ class Order
         // TODO
         // return $removedItem;
     }
-
-    /**
-     * Gets the raw total, before discount and tax.
-     *
-     * @return float
-     */
-    public function rawTotal()
-    {
-        $rawTotal = 0.00;
-        foreach ($this->items as $item) {
-            $rawTotal += $item->getPrice();
-        }
-        return $rawTotal;
-    }
-
+    
     /**
      * Get all of the items in the order.
      *
@@ -57,7 +43,7 @@ class Order
     {
         return $this->items;
     }
-
+    
     /**
      * Get the names of all of the order items.
      *
@@ -71,7 +57,7 @@ class Order
         }
         return $allItems;
     }
-
+    
     /**
      * Get the prices of all of the order items.
      *
@@ -99,5 +85,19 @@ class Order
             $allNamesAndPrices[$key]['price'] = $item->getPrice();
         }
         return $allNamesAndPrices;
+    }
+
+    /**
+     * Gets the raw total, before discount and tax.
+     *
+     * @return float
+     */
+    public function rawTotal()
+    {
+        $rawTotal = 0.00;
+        foreach ($this->items as $item) {
+            $rawTotal += $item->getPrice();
+        }
+        return $rawTotal;
     }
 }
