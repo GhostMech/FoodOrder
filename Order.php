@@ -79,7 +79,7 @@ class Order
      *
      * @return float
      */
-    public function getDiscount()
+    public function discountRate()
     {
         return $this->discount;
     }
@@ -89,7 +89,7 @@ class Order
      *
      * @return float
      */
-    public function getTax()
+    public function taxRate()
     {
         return $this->tax;
     }
