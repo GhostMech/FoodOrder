@@ -150,4 +150,18 @@ class Order
         }
         return $rawTotal;
     }
+
+    /**
+     * Get the order total, after the discount and tax are applied.
+     *
+     * @return float
+     */
+    public function totalWithTax()
+    {
+        $total = $this->rawTotal();
+        $discountedTotal = $total - ($total * $this->discount);
+        $totalWithTax = $discountedTotal * (1 + $this->tax); 
+
+        return $totalWithTax;
+    }
 }
