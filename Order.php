@@ -9,6 +9,8 @@ use PDO;
 class Order
 {
     protected $items = [];
+    protected $discount;
+    protected $tax;
 
     /**
      * Add an item to the order.
@@ -33,6 +35,34 @@ class Order
         // TODO
         // return $removedItem;
     }
+
+    /**
+     * Set the discount rate of the order. Returns the object for chaining.
+     *
+     * @param mixed $discount
+     * @return \GMH\Order
+     */
+    public function discount($discount)
+    {
+        if (is_numeric($discount)) {
+            $this->discount = $discount/100;
+        }
+        return $this;
+    }
+
+    /**
+     * Set the tax rate of the order. Returns the object for chaining.
+     *
+     * @param mixed $tax
+     * @return \GMH\Order
+     */
+    public function tax($tax)
+    {
+        if (is_numeric($tax)) {
+            $this->tax = $tax/100;
+        }
+        return $this;
+    }
     
     /**
      * Get all of the items in the order.
@@ -42,6 +72,26 @@ class Order
     public function getItems()
     {
         return $this->items;
+    }
+
+    /**
+     * Get the discount rate.
+     *
+     * @return float
+     */
+    public function getDiscount()
+    {
+        return $this->discount;
+    }
+
+    /**
+     * Get the tax rate.
+     *
+     * @return float
+     */
+    public function getTax()
+    {
+        return $this->tax;
     }
     
     /**
