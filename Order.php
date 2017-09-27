@@ -151,6 +151,11 @@ class Order
         return $rawTotal;
     }
 
+    public function discountedTotal()
+    {
+        return $this->rawTotal() - ($this->rawTotal() * $this->discount);
+    }
+
     /**
      * Get the order total, after the discount and tax are applied.
      *
