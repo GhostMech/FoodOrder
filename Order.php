@@ -28,12 +28,13 @@ class Order
      * Removes an item from the order.
      *
      * @param int $id
-     * @return $removedItem
+     * @return object $removedItem
      */
     public function removeItem($id)
     {
-        // TODO
-        // return $removedItem;
+        $removedItem = $this->items[$id];
+        unset($this->items[$id]);
+        return $removedItem;
     }
 
     /**
