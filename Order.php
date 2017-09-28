@@ -43,7 +43,7 @@ class Order
      * @param mixed $discount
      * @return \GMH\Order
      */
-    public function discount($discount)
+    public function discount($discount = null)
     {
         if (is_numeric($discount)) {
             $this->discount = $discount/100;
@@ -57,7 +57,7 @@ class Order
      * @param mixed $tax
      * @return \GMH\Order
      */
-    public function tax($tax)
+    public function tax($tax = null)
     {
         if (is_numeric($tax)) {
             $this->tax = $tax/100;
